@@ -1,0 +1,209 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    /* background-image: url("https://nigeriannewsdirect.com/wp-content/uploads/2020/09/Banks-in-Nigeria.jpg"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 100%;
+}
+
+.asd {
+    position: sticky;
+    top: 0px;
+    z-index: 55;
+    background-color: orange !important;
+    width: 100%;
+}
+
+.profile-container {
+    background-image: url("../img/usuariofinal.png");
+    background-size: 75px , cover ;
+    height: 80px;
+    width: 80px;
+}
+.tagProfile{
+margin-top: 3rem;
+font-weight: 700;
+}
+
+.tagTittle{
+    display: flex;
+    justify-content: center;
+    align-content: space-evenly;
+
+    
+}
+.logo {
+    height: 100px;
+    width: 100px;
+}
+
+#h1-index {
+    display: none;
+}
+
+/* cripto */
+#tabla-Cripto-css {
+    width: 100%;
+}
+.tituloCotizacion{
+    margin-left: 1rem;
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+}
+
+#dataCripto {
+    height: 70px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    animation-name: mover-izquierda-derecha;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    flex-direction: column-reverse;
+    margin-bottom: 4rem;
+
+}
+
+#dataCripto:hover {
+    animation-play-state: paused;
+}
+
+
+
+.coin {
+    color: black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 35px;
+}
+
+.coin-price {
+    color: red;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 35px;
+}
+
+/* DOLAR */
+
+#divDolar {
+    height: 70px;
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    position: relative;
+    animation-name: mover-izquierda-derecha;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    flex-direction: column-reverse;
+    overflow: hidden;
+  }
+  
+  #divDolar:hover {
+    animation-play-state: paused;
+  }
+  
+  @keyframes mover-izquierda-derecha {
+    0% {
+        left: 0%;
+    }
+
+    50% {
+        left: -40%;
+    }
+
+    75% {
+        left: -60%;
+    }
+
+    100%{
+        left: 0%;
+
+    }
+}
+
+
+.tipoDolar {
+    color: black;
+    margin-left: 9px;
+    font-size: 35px;
+}
+
+.precioDolar {
+    color: red;
+    margin-left: 5px;
+    font-size: 35px;
+}
+
+
+.divHeroe {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: orange;
+    height: auto;
+    width: 100% ;
+
+
+}
+
+.imgHeroe {
+    display: flex;
+    height: auto;
+    width: 300px;
+    background-size: cover;
+    flex: 0 0 auto;
+    margin-right: 20px;
+    margin-left: 5rem;
+}
+
+.divParrafos {
+    flex: 1;
+    margin: 0 20px;
+}
+
+.p1Heroe {
+    display: flex;
+
+
+}
+
+.p2Heroe {
+    display: flex;
+
+}
+
+.btnHeroe {
+    height: 50px;
+    width: 150px;
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5rem;
+    background-color: #0d6efd;
+    color: azure;
+}
+
+.btnOthers {
+    height: 50px;
+    width: 150px;
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5rem;
+    background-color: #0d6efd;
+    color: azure;
+}
