@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+
 }
 
 body {
@@ -9,6 +10,8 @@ body {
     background-size: cover;
     opacity: 100%;
 }
+
+
 
 .asd {
     position: sticky;
@@ -69,6 +72,7 @@ font-weight: 700;
     flex-direction: column-reverse;
     margin-bottom: 4rem;
 
+
 }
 
 #dataCripto:hover {
@@ -108,6 +112,7 @@ font-weight: 700;
     animation-timing-function: linear;
     flex-direction: column-reverse;
     overflow: hidden;
+
   }
   
   #divDolar:hover {
@@ -173,8 +178,9 @@ font-weight: 700;
     margin: 0 20px;
 }
 
-.p1Heroe {
-    display: flex;
+.p-heroe {
+  color: white;
+  padding-bottom: 7rem;
 
 
 }
@@ -184,14 +190,7 @@ font-weight: 700;
 
 }
 
-.btnHeroe {
-    height: 50px;
-    width: 150px;
-    display: flex;
-    flex: 0 0 auto;
-    justify-content: center;
-    align-items: center;
-    margin-right: 5rem;
+.btn-heroe {
     background-color: #0d6efd;
     color: azure;
 }
@@ -206,4 +205,14 @@ font-weight: 700;
     margin-right: 5rem;
     background-color: #0d6efd;
     color: azure;
+}
+
+
+.heroee{
+    background-image: url(https://static.eldiario.es/clip/36e89e8b-3d44-49da-88a5-2ef53d0b2b6f_16-9-discover-aspect-ratio_default_0.jpg);
+    width: 100%;
+    background-size:cover;
+    object-fit: cover;
+    
+    
 }
