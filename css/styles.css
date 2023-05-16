@@ -1,7 +1,6 @@
 * {
     padding: 0;
     margin: 0;
-
 }
 
 body {
@@ -10,8 +9,6 @@ body {
     background-size: cover;
     opacity: 100%;
 }
-
-
 
 .asd {
     position: sticky;
@@ -23,22 +20,22 @@ body {
 
 .profile-container {
     background-image: url("../img/usuariofinal.png");
-    background-size: 75px , cover ;
+    background-size: 75px, cover;
     height: 80px;
     width: 80px;
 }
-.tagProfile{
-margin-top: 3rem;
-font-weight: 700;
+
+.tagProfile {
+    margin-top: 3rem;
+    font-weight: 700;
 }
 
-.tagTittle{
+.tagTittle {
     display: flex;
     justify-content: center;
     align-content: space-evenly;
-
-    
 }
+
 .logo {
     height: 100px;
     width: 100px;
@@ -52,7 +49,8 @@ font-weight: 700;
 #tabla-Cripto-css {
     width: 100%;
 }
-.tituloCotizacion{
+
+.tituloCotizacion {
     margin-left: 1rem;
     display: flex;
     justify-content: center;
@@ -71,15 +69,11 @@ font-weight: 700;
     animation-timing-function: linear;
     flex-direction: column-reverse;
     margin-bottom: 4rem;
-
-
 }
 
 #dataCripto:hover {
     animation-play-state: paused;
 }
-
-
 
 .coin {
     color: black;
@@ -112,14 +106,13 @@ font-weight: 700;
     animation-timing-function: linear;
     flex-direction: column-reverse;
     overflow: hidden;
+}
 
-  }
-  
-  #divDolar:hover {
+#divDolar:hover {
     animation-play-state: paused;
-  }
-  
-  @keyframes mover-izquierda-derecha {
+}
+
+@keyframes mover-izquierda-derecha {
     0% {
         left: 0%;
     }
@@ -132,12 +125,10 @@ font-weight: 700;
         left: -60%;
     }
 
-    100%{
-        left: 0%;
-
+    100% {
+        left: -100%;
     }
 }
-
 
 .tipoDolar {
     color: black;
@@ -151,16 +142,13 @@ font-weight: 700;
     font-size: 35px;
 }
 
-
 .divHeroe {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: orange;
     height: auto;
-    width: 100% ;
-
-
+    width: 100%;
 }
 
 .imgHeroe {
@@ -179,15 +167,12 @@ font-weight: 700;
 }
 
 .p-heroe {
-  color: white;
-  padding-bottom: 7rem;
-
-
+    color: white;
+    padding-bottom: 7rem;
 }
 
 .p2Heroe {
     display: flex;
-
 }
 
 .btn-heroe {
@@ -207,12 +192,9 @@ font-weight: 700;
     color: azure;
 }
 
-
-.heroee{
+.heroee {
     background-image: url(https://static.eldiario.es/clip/36e89e8b-3d44-49da-88a5-2ef53d0b2b6f_16-9-discover-aspect-ratio_default_0.jpg);
     width: 100%;
-    background-size:cover;
+    background-size: cover;
     object-fit: cover;
-    
-    
 }

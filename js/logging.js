@@ -1,8 +1,8 @@
-const formLogging = document.getElementById("formLogging");
+const formLogging = document.getElementById("formLogging"); //id formulario logging
 
-const usernameLogging = document.getElementById("username");
+const usernameLogging = document.getElementById("username"); //input username
 
-const passwordLogging = document.getElementById("passwordLogging");
+const passwordLogging = document.getElementById("passwordLogging"); //input password
 
 
 formLogging.addEventListener("submit", (e) => {
@@ -20,8 +20,7 @@ formLogging.addEventListener("submit", (e) => {
         // Si existe, guardar el nombre de usuario en sessionStorage
         sessionStorage.setItem('username', user.username);
         alert(`¡Bienvenido ${user.username}!`);
-        // Redirigir a la página de inicio
-        window.location.href = 'profile.html';
+        window.location.href = 'profile.html'; //redirecciona a su perfil si fue exitoso
     } else {
         alert('Nombre de usuario o contraseña incorrectos');
         formLogging.reset ();

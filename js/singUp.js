@@ -36,7 +36,7 @@ formSignUp.addEventListener("submit", (e) => {
 
         registrados.push(nuevoUsuario);
 
-        localStorage.setItem("registrados", JSON.stringify(registrados));
+        localStorage.setItem("registrados", JSON.stringify(registrados)); //Primer subida al localStorage
 
         alert(`Tu registro fue un éxito ${signUpName.value}!`);
 

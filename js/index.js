@@ -1,35 +1,3 @@
-const bottonLogingNav = document.querySelector(".bottonLogingNav");
-
-const bottonSignUpNav = document.querySelector(".bottonSignUpNav");
-
-const profileContainer = document.querySelector(".profile-container");
-
-const bottonProfile = document.getElementById ("profile-btn");
-
-const bottonProfileIndex = document.getElementById ("profile-btn-index");
-
-const registrados = JSON.parse(localStorage.getItem('registrados'));
-
-const usuariosRegistrados = JSON.parse(localStorage.getItem('registrados'));
-
-
-// Verificar si el usuario está logeado
-
-if (localStorage.getItem("registrados") !== null) {
-    // Si está logeado, mostrar el botón de perfil y ocultar los botones de login y signup
-    bottonLogingNav.style.display = "none";
-    bottonSignUpNav.style.display = "none";
-    profileContainer.style.display = "block";
-} else {
-
-    // Si no está logeado, mostrar los botones de login y signup y ocultar el botón de perfil
-    bottonLogingNav.style.display = "block";
-    bottonSignUpNav.style.display = "block";
-    profileContainer.style.display = "none";
-};
-
-
-
 const urlDolar = "https://criptoya.com/api/dolar";
 
 const urlCripto = "https://api.binance.com/api/v3/ticker/price";
@@ -37,6 +5,8 @@ const urlCripto = "https://api.binance.com/api/v3/ticker/price";
 const divCripto = document.getElementById("divCripto");
 
 const divDolar = document.getElementById("divDolar");
+
+const btnSignUp = document.getElementById ("btnSignUp");
 
 //traigo con fetch api de cripto dolar y lo coloco en un div en el index
 setInterval(() => {
@@ -55,6 +25,7 @@ setInterval(() => {
         })
         .catch(error => console.log(error));
 }, 3000); //numero de intervalo, 3000 = 3segundos que se actualizara
+
 
 
 
@@ -89,15 +60,6 @@ const mostrarCriptos = (data) => {
 };
 
 
-
-
-bottonProfile.addEventListener ("click", ()=>{
-    window.location.href = "profile.html";
-});
-
-bottonProfileIndex.addEventListener ("click", ()=>{
-    window.location.href = "profile.html";
-});
 
 
 
