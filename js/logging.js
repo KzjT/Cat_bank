@@ -20,10 +20,10 @@ formLogging.addEventListener("submit", (e) => {
         // Si existe, guardar el nombre de usuario en sessionStorage
         sessionStorage.setItem('username', user.username);
         alert(`¡Bienvenido ${user.username}!`);
-        window.location.href = 'profile.html'; //redirecciona a su perfil si fue exitoso
+        window.location.href = "profile.html"; //redirecciona a su perfil si fue exitoso
     } else {
         alert('Nombre de usuario o contraseña incorrectos');
         formLogging.reset ();
-        window.location.href ="./profile.html";
+        window.location.href ="profile.html";
     }
 })

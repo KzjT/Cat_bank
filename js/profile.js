@@ -159,10 +159,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const deslogearseBtn = div.querySelector("#deslogearse");
         deslogearseBtn.addEventListener("click", function () {
             // Guardar el usuario actual como cookie para recordarlo
-            document.cookie = `usuario=${JSON.stringify(usuario)}; expires=Thu, 01 Jan 2099 00:00:00 UTC; path=/`;
+            //document.cookie = `usuario=${JSON.stringify(usuario)}; expires=Thu, 01 Jan 2099 00:00:00 UTC; path=/`;
+            localStorage.clear();
             alert("has cerrado sesion exitosamente, hasta la proxima!");
             // Redireccionar a la página de inicio de sesión
-            window.location.href = "./login.html";
+            window.location.href = "index.html";
         });
     });
 });
