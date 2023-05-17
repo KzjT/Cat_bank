@@ -43,9 +43,10 @@ body {
 }
 
 #bodyProfile {
-    background-image: url(https://wallpapercave.com/wp/wp4316678.jpg);
+    background-image: url(https://wallpapercave.com/wp/wp4316678.jpg) !important;
     object-fit: contain;
     background-size: cover;
+    height: max-content;
 }
 
 .h1Profile{
