@@ -24,6 +24,6 @@ formLogging.addEventListener("submit", (e) => {
     } else {
         alert('Nombre de usuario o contraseña incorrectos');
         formLogging.reset ();
-        window.location.href ="login.html";
+        window.location.href ="./profile.html";
     }
 })

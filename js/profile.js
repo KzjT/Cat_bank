@@ -1,167 +1,168 @@
-const btnChangeEmail = document.querySelector("#btn-change-email"); //BTN EMAIL
-
-const emailContainer = document.querySelector("#cambiar-email-container"); // EMAIL CONTAINER
-
-const emailActual = document.querySelector("#email-actual");  // EMAIL ACTUAL
-
-const emailNuevo = document.querySelector("#email-nuevo");  //NUEVO EMAIL
-
-const btnChangeUsername = document.querySelector("#btn-change-username");   //BTN USERNAME
-
-const usernameContainer = document.querySelector("#cambiar-username-container"); // USERNAME CONTAINER
-
-const ActualUsername = document.querySelector("#Actual-Username");  //USERNAME ACTUAL
-
-const usernameNuevo = document.querySelector("#username-nuevo");
-
-const btnChangePassword = document.querySelector("#btn-change-password");  // BTN PASS
-
-const passwordContainer = document.querySelector("#cambiar-password-container"); // PASS CONTAINER
-
-const passwordActual = document.querySelector("#password-actual");
-
-const passwordNnueva = document.querySelector("#password-nueva");
-
-const btnChangeDetails = document.querySelector("#btn-change-details");
-
-const detailsContainer = document.querySelector("#cambiar-detalles-container"); // DETAILS CONTAINER
-
-const actualName = document.querySelector("#actual-name");
-
-const actualLastname = document.querySelector("#actual-Lastname");
-
-const nombreNuevo = document.querySelector("#nombre-nuevo");
-
-const LastnameNuevo = document.querySelector("#lastname-nuevo");
-
-const deslogearse = document.getElementById("deslogearse"); //DISCONNECT
-
-const mainProfile = document.getElementById ("mainProfile");
-
-/*
-
 document.addEventListener("DOMContentLoaded", function () {
-
     // Obtener los usuarios registrados del almacenamiento local
-    // Recuperar los usuarios registrados del localStorage
     const usuariosRegistrados = JSON.parse(localStorage.getItem('registrados'));
 
     // Obtener el div donde se mostrarán los usuarios
+    const divMostrarUsuarios = document.getElementById('divMostrarUsuarios');
 
     // Recorrer el array de usuarios registrados y crear un elemento de lista para cada uno
+    usuariosRegistrados.forEach((usuario) => {
+        // Crear un div para mostrar la información del usuario
+        const div = document.createElement("div");
+        div.id = "datosUsuario";
 
+        // Crear los elementos HTML para mostrar la información del usuario
+        div.innerHTML = `
+        <h1>Información del usuario</h1>
+  
+        <div>
+          <h3>Cambiar email</h3>
+          <button id="btn-change-email">Cambiar</button>
+          <div id="cambiar-email-container" style="display:none;">
+            <label for="email-actual">Email actual:</label>
+            <input type="text" id="email-actual" disabled value="${usuario.email}">
+            <label for="email-nuevo">Nuevo email:</label>
+            <input type="text" id="email-nuevo">
+            <button id="guardar-email-btn">Guardar</button>
+          </div>    
+        </div>    
+  
+        <div>
+          <h3>Cambiar username</h3>
+          <button id="btn-change-username">Cambiar</button>
+          <div id="cambiar-username-container" style="display:none;">
+            <label for="username-actual">Username actual:</label>
+            <input type="text" id="actual-username" disabled value="${usuario.username}">
+            <label for="username-nuevo">Nuevo username:</label>
+            <input type="text" id="nuevo-username">
+            <button id="guardar-username-btn">Guardar</button>
+          </div>    
+        </div>    
+  
+        <div>
+          <h3>Cambiar password</h3>
+          <button id="btn-change-password">Cambiar</button>
+          <div id="cambiar-password-container" style="display:none;">
+            <label for="password-actual">Password actual:</label>
+            <input type="password" id="password-actual"disabled value="${usuario.password}">
+            <label for="password-nueva">Nueva password:</label>
+            <input type="password" id="password-nueva">
+            <button id="guardar-password-btn">Guardar</button>
+          </div>    
+        </div>    
+  
+        <div>
+          <h3>Cambiar datos personales</h3>
+          <button id="btn-change-details">Cambiar</button>
+          <div id="cambiar-detalles-container" style="display:none;">
+            <label for="actual-nombre">Nombre actual:</label>
+            <input type="text" id="actual-nombre" disabled value="${usuario.nombre}">
+            <label for="nuevo-nombre">Nuevo nombre:</label>
+            <input type="text" id="nuevo-nombre">
+            <label for="actual-apellido">Apellido actual:</label>
+            <input type="text" id="actual-apellido" disabled value="${usuario.apellido}">
+            <label for="nuevo-apellido">Nuevo apellido:</label>
+            <input type="text" id="nuevo-apellido">
+            <button id="guardar-detalles-btn">
+            Guardar</button>
+            </div>
+            </div>
 
-    usuariosRegistrados.forEach((usuario, index) => {
-        // Si es el último usuario, crear un elemento de lista para él
-    if (index === usuariosRegistrados.length - 1) {
+            <button id="deslogearse">Desconectar</button>`;
 
-            const div = document.createElement("div");
+        // Agregar el div del usuario al contenedor principal
+        divMostrarUsuarios.appendChild(div);
 
-            div.innerHTML = `<h1>Informacion del usuario</h1>
+        // Obtener los elementos de cambio de email
+        const btnChangeEmail = div.querySelector("#btn-change-email");
+        const cambiarEmailContainer = div.querySelector("#cambiar-email-container");
+        const emailActualInput = div.querySelector("#email-actual");
+        const emailNuevoInput = div.querySelector("#email-nuevo");
+        const guardarEmailBtn = div.querySelector("#guardar-email-btn");
 
-            <div>
-                <h3>cambiar email</h3>
-                <button id="btn-change-email">change</button>
-                <div id="cambiar-email-container" style="display:none;">
-                    <label for="email-actual">Email actual:</label>
-                    <input type="text" id="email-actual" disabled> ${usuario.email}
-                    <label for="email-nuevo">Nuevo email:</label>
-                    <input type="text" id="email-nuevo">
-                    <button id="guardar-email-btn">save</button>
-                </div>    
-            </div>    
-            
-            
-            <div>
-                <h3>cambiar Username</h3>
-                <button id="btn-change-username">change</button>
-                <div id="cambiar-username-container" style="display:none;">
-                    <label for="username-actual">Actual Username</label>
-                    <input type="text" id="Actual-Username" disabled>
-                    <label for="username-nuevo">Nuevo Username</label>
-                    <input type="text" id="username-nuevo">
-                    <button>save</button>
-                </div>    
-            </div>    
-            
-            
-            <div>
-                <h3>cambiar Password</h3>
-                <button id="btn-change-password">change</button>
-                <div id="cambiar-password-container" style="display:none;">
-                        <label for="password-actual">Password Actual</label>
-                        <input type="text" id="password-actual" disabled>
-                        <label for="password-nueva">Nueva Password</label>
-                        <input type="text" id="password-nueva">
-                        <button>save</button>
-                    </div>    
-                </div>    
-            
-            
-                <div>
-                    <h3>Cambiar datos personales</h3>
-                    <button id="btn-change-details">change</button>
-                    <div id="cambiar-detalles-container" style="display:none;">
-                        <label for="actual-name">Actual Nombre</label>
-                        <input type="text" id="actual-name" disabled>
-                        <label for="nombre-nuevo">Nuevo Nombre</label>
-                        <input type="text" id="nombre-nuevo">
-                        <label for="actual-Lastname">Actual Nombre</label>
-                        <input type="text" id="actual-Lastname" disabled>
-                        <label for="lastname-nuevo">Nuevo Nombre</label>
-                        <input type="text" id="lastname-nuevo">
-                        <button>save</button>
-                    </div>    
-                </div>    
-            
-            
-                <button id="deslogearse">Dissconect</button> `
+        // Mostrar/ocultar contenedor de cambio de email
+        btnChangeEmail.addEventListener("click", function () {
+            cambiarEmailContainer.style.display = "block";
+        });
 
-                div.id = "datosUsuario";
-                mainProfile.appendChild (div);
+        // Guardar el nuevo email
+        guardarEmailBtn.addEventListener("click", function () {
+            usuario.email = emailNuevoInput.value;
+            localStorage.setItem('registrados', JSON.stringify(usuariosRegistrados));
+            cambiarEmailContainer.style.display = "none";
+            location.reload()
+        });
 
-            }    
-        });    
-    
-    });    
+        // Obtener los elementos de cambio de username
+        const btnChangeUsername = div.querySelector("#btn-change-username");
+        const cambiarUsernameContainer = div.querySelector("#cambiar-username-container");
+        const actualUsernameInput = div.querySelector("#actual-username");
+        const nuevoUsernameInput = div.querySelector("#nuevo-username");
+        const guardarUsernameBtn = div.querySelector("#guardar-username-btn");
 
-    */
+        // Mostrar/ocultar contenedor de cambio de username
+        btnChangeUsername.addEventListener("click", function () {
+            cambiarUsernameContainer.style.display = "block";
+        });
 
+        // Guardar el nuevo username
+        guardarUsernameBtn.addEventListener("click", function () {
+            usuario.username = nuevoUsernameInput.value;
+            localStorage.setItem('registrados', JSON.stringify(usuariosRegistrados));
+            cambiarUsernameContainer.style.display = "none";
+            location.reload()
+        });
 
-btnChangeEmail.addEventListener("click", () => {
+        // Obtener los elementos de cambio de password
+        const btnChangePassword = div.querySelector("#btn-change-password");
+        const cambiarPasswordContainer = div.querySelector("#cambiar-password-container");
+        const passwordActualInput = div.querySelector("#password-actual");
+        const passwordNuevaInput = div.querySelector("#password-nueva");
+        const guardarPasswordBtn = div.querySelector("#guardar-password-btn");
 
-    emailContainer.style.display = "block";
+        // Mostrar/ocultar contenedor de cambio de password
+        btnChangePassword.addEventListener("click", function () {
+            cambiarPasswordContainer.style.display = "block";
+        });
 
-    emailActual.value 
- 
-    
+        // Guardar la nueva password
+        guardarPasswordBtn.addEventListener("click", function () {
+            usuario.password = passwordNuevaInput.value;
+            localStorage.setItem('registrados', JSON.stringify(usuariosRegistrados));
+            cambiarPasswordContainer.style.display = "none";
+            location.reload()
+        });
+
+        // Obtener los elementos de cambio de detalles personales
+        const btnChangeDetails = div.querySelector("#btn-change-details");
+        const cambiarDetallesContainer = div.querySelector("#cambiar-detalles-container");
+        const actualNombreInput = div.querySelector("#actual-nombre");
+        const nuevoNombreInput = div.querySelector("#nuevo-nombre");
+        const actualApellidoInput = div.querySelector("#actual-apellido");
+        const nuevoApellidoInput = div.querySelector("#nuevo-apellido");
+        const guardarDetallesBtn = div.querySelector("#guardar-detalles-btn");
+
+        // Mostrar/ocultar contenedor de cambio de detalles personales
+        btnChangeDetails.addEventListener("click", function () {
+            cambiarDetallesContainer.style.display = "block";
+        });
+
+        // Guardar los nuevos detalles personales
+        guardarDetallesBtn.addEventListener("click", function () {
+            usuario.nombre = nuevoNombreInput.value;
+            localStorage.setItem('registrados', JSON.stringify(usuariosRegistrados));
+            cambiarDetallesContainer.style.display = "none";
+            location.reload()
+        });
+
+        // Manejar el botón de desconexión
+        const deslogearseBtn = div.querySelector("#deslogearse");
+        deslogearseBtn.addEventListener("click", function () {
+            // Guardar el usuario actual como cookie para recordarlo
+            document.cookie = `usuario=${JSON.stringify(usuario)}; expires=Thu, 01 Jan 2099 00:00:00 UTC; path=/`;
+            alert("has cerrado sesion exitosamente, hasta la proxima!");
+            // Redireccionar a la página de inicio de sesión
+            window.location.href = "./login.html";
+        });
+    });
 });
-
-btnChangeUsername.addEventListener("click", () => {
-    usernameContainer.style.display = "block";
-    ActualUsername.value
-
-})
-
-
-
-btnChangePassword.addEventListener("click", () => {
-    passwordContainer.style.display = "block";
-    passwordActual.value
-})
-
-
-btnChangeDetails.addEventListener("click", () => {
-    detailsContainer.style.display = "block";
-    actualName.value
-    actualLastname.value
-})
-
-
-deslogearse.addEventListener("click", () => {
-    localStorage.clear();
-    alert ("has cerrado sesion");
-    window.location.href = "../index.html"
-
-})
-

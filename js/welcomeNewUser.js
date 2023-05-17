@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+/*document.addEventListener("DOMContentLoaded", function () {
 
     // Obtener los usuarios registrados del almacenamiento local
     // Recuperar los usuarios registrados del localStorage
@@ -31,3 +31,4 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+*/
