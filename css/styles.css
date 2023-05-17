@@ -19,7 +19,7 @@ body {
 }
 
 .profile-container {
-    background-image: url("../img/usuariofinal.png");
+    background-image: url("../img/User_font_awesome.svg.png");
     background-size: 75px, cover;
     height: 80px;
     width: 80px;
@@ -42,6 +42,36 @@ body {
     
 }
 
+#bodyProfile {
+    background-image: url(https://wallpapercave.com/wp/wp4316678.jpg);
+    object-fit: contain;
+    background-size: cover;
+}
+
+.h1Profile{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+#divMostrarUsuarios *{
+    margin: 1rem;
+}
+
+#divMostrarUsuarios h3{
+    color: black;
+    font-size: 35px;
+    opacity: 100;
+}
+#divMostrarUsuarios label {
+    color: black;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.unloggingBTN{
+    background-color: black;
+
+}
 #h1-index {
     display: none;
 }
@@ -198,4 +228,8 @@ body {
     width: 100%;
     background-size: cover;
     object-fit: cover;
+}
+
+.btnEspecial{
+    background-color: #0d6efd !important;
 }

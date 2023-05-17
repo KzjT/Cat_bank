@@ -13,47 +13,47 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Crear los elementos HTML para mostrar la información del usuario
         div.innerHTML = `
-        <h1>Información del usuario</h1>
+        <h1 class="h1Profile">Información del usuario</h1>
   
         <div>
           <h3>Cambiar email</h3>
-          <button id="btn-change-email">Cambiar</button>
+          <button id="btn-change-email" class="btn btn-primary btn-lg px-4 me-md-2">Cambiar</button>
           <div id="cambiar-email-container" style="display:none;">
             <label for="email-actual">Email actual:</label>
-            <input type="text" id="email-actual" disabled value="${usuario.email}">
+            <input type="text"  id="email-actual"  disabled value="${usuario.email}">
             <label for="email-nuevo">Nuevo email:</label>
             <input type="text" id="email-nuevo">
-            <button id="guardar-email-btn">Guardar</button>
+            <button id="guardar-email-btn" class="btn btn-primary btn-lg px-4 me-md-2">Guardar</button>
           </div>    
         </div>    
   
         <div>
           <h3>Cambiar username</h3>
-          <button id="btn-change-username">Cambiar</button>
+          <button id="btn-change-username" class="btn btn-primary btn-lg px-4 me-md-2">Cambiar</button>
           <div id="cambiar-username-container" style="display:none;">
             <label for="username-actual">Username actual:</label>
             <input type="text" id="actual-username" disabled value="${usuario.username}">
             <label for="username-nuevo">Nuevo username:</label>
             <input type="text" id="nuevo-username">
-            <button id="guardar-username-btn">Guardar</button>
+            <button id="guardar-username-btn" class="btn btn-primary btn-lg px-4 me-md-2">Guardar</button>
           </div>    
         </div>    
   
         <div>
           <h3>Cambiar password</h3>
-          <button id="btn-change-password">Cambiar</button>
+          <button id="btn-change-password" class="btn btn-primary btn-lg px-4 me-md-2">Cambiar</button>
           <div id="cambiar-password-container" style="display:none;">
             <label for="password-actual">Password actual:</label>
             <input type="password" id="password-actual"disabled value="${usuario.password}">
             <label for="password-nueva">Nueva password:</label>
             <input type="password" id="password-nueva">
-            <button id="guardar-password-btn">Guardar</button>
+            <button id="guardar-password-btn" class="btn btn-primary btn-lg px-4 me-md-2">Guardar</button>
           </div>    
         </div>    
   
         <div>
           <h3>Cambiar datos personales</h3>
-          <button id="btn-change-details">Cambiar</button>
+          <button id="btn-change-details" class="btn btn-primary btn-lg px-4 me-md-2">Cambiar</button>
           <div id="cambiar-detalles-container" style="display:none;">
             <label for="actual-nombre">Nombre actual:</label>
             <input type="text" id="actual-nombre" disabled value="${usuario.nombre}">
@@ -63,12 +63,12 @@ document.addEventListener("DOMContentLoaded", function () {
             <input type="text" id="actual-apellido" disabled value="${usuario.apellido}">
             <label for="nuevo-apellido">Nuevo apellido:</label>
             <input type="text" id="nuevo-apellido">
-            <button id="guardar-detalles-btn">
+            <button id="guardar-detalles-btn" class="btn btn-primary btn-lg px-4 me-md-2">
             Guardar</button>
             </div>
             </div>
 
-            <button id="deslogearse">Desconectar</button>`;
+            <button id="deslogearse" class="btn btn-primary btn-lg px-4 me-md-2 unloggingBTN">Desconectar</button>`;
 
         // Agregar el div del usuario al contenedor principal
         divMostrarUsuarios.appendChild(div);
@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Guardar el nuevo username
         guardarUsernameBtn.addEventListener("click", function () {
             usuario.username = nuevoUsernameInput.value;
-            localStorage.setItem('registrados', JSON.stringify(usuariosRegistrados));
+            localStorage.setItem('registrados', JSON.stringify(usuariosRegistrados[0]));
             cambiarUsernameContainer.style.display = "none";
             location.reload()
         });
@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
             localStorage.clear();
             alert("has cerrado sesion exitosamente, hasta la proxima!");
             // Redireccionar a la página de inicio de sesión
-            window.location.href = "index.html";
+            window.location.href = "../index.html";
         });
     });
 });

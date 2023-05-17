@@ -41,7 +41,7 @@ formSignUp.addEventListener("submit", (e) => {
         alert(`Tu registro fue un éxito ${signUpName.value}!`);
 
         // Redirigir al usuario a la página de inicio de sesión
-        window.location.href = "userLogging.html";
+        window.location.href = "./profile.html";
 
         formSignUp.reset();
 
