@@ -77,50 +77,12 @@ body {
     display: none;
 }
 
-/* cripto */
-#tabla-Cripto-css {
-    width: 100%;
-}
 
 .tituloCotizacion {
     margin-left: 1rem;
     display: flex;
     justify-content: center;
     font-weight: 700;
-}
-
-#dataCripto {
-    height: 70px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    position: relative;
-    animation-name: mover-izquierda-derecha;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    flex-direction: column-reverse;
-    margin-bottom: 4rem;
-}
-
-#dataCripto:hover {
-    animation-play-state: paused;
-}
-
-.coin {
-    color: black;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    font-size: 35px;
-}
-
-.coin-price {
-    color: red;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    font-size: 35px;
 }
 
 /* DOLAR */
@@ -133,45 +95,68 @@ body {
     align-items: baseline;
     position: relative;
     animation-name: mover-izquierda-derecha;
-    animation-duration: 10s;
+    animation-duration: 30s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     flex-direction: column-reverse;
-    overflow: hidden;
+
 }
 
 #divDolar:hover {
     animation-play-state: paused;
 }
 
-@keyframes mover-izquierda-derecha {
-    0% {
-        left: 0%;
-    }
+/* cripto */
+#dataCripto {
+    height: 70px;
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    position: relative;
+    animation-name: mover-izquierda-derecha;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    flex-direction: column-reverse;
+    overflow: hidden;
 
-    50% {
-        left: -40%;
-    }
-
-    75% {
-        left: -60%;
-    }
-
-    100% {
-        left: -100%;
-    }
 }
+
+#dataCripto:hover {
+    animation-play-state: paused;
+}
+
+.coin {
+    color: black;
+    margin-left: 9px;
+    font-size: 25px;
+
+
+}
+
+
+
+.coinPrice {
+    color: red;
+    margin-left: 5px;
+    font-size: 25px;
+
+}
+
+
+
 
 .tipoDolar {
     color: black;
     margin-left: 9px;
-    font-size: 35px;
+    font-size: 25px;
 }
 
 .precioDolar {
     color: red;
     margin-left: 5px;
-    font-size: 35px;
+    font-size: 25px;
 }
 
 .divHeroe {
@@ -234,3 +219,4 @@ body {
 .btnEspecial{
     background-color: #0d6efd !important;
 }
+

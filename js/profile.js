@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Guardar el nuevo username
         guardarUsernameBtn.addEventListener("click", function () {
             usuario.username = nuevoUsernameInput.value;
-            localStorage.setItem('registrados', JSON.stringify(usuariosRegistrados[0]));
+            localStorage.setItem('registrados', JSON.stringify(usuariosRegistrados));
             cambiarUsernameContainer.style.display = "none";
             location.reload()
         });
